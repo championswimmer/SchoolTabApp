@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SchoolTabApp</string>
+
+    <string name="device_admin_desc">School Aadmin</string>
 </resources>

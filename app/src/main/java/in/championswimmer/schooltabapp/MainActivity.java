@@ -18,7 +18,11 @@ public class MainActivity extends AppCompatActivity {
         intentFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
         screenOnReceiver = new ScreenOnReceiver();
-        unregisterReceiver(screenOnReceiver);
+        try {
+            unregisterReceiver(screenOnReceiver);
+        } catch (Exception e) {
+
+        }
         registerReceiver(screenOnReceiver, intentFilter);
     }
 

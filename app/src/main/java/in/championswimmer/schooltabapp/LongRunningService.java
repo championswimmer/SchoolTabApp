@@ -4,8 +4,11 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
+import android.util.Log;
 
 public class LongRunningService extends Service {
+
+    public static final String TAG = "LongRunningService";
     public LongRunningService() {
     }
 
@@ -16,6 +19,8 @@ public class LongRunningService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d(TAG, "onStartCommand: ");
+
         intentFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
         screenOnReceiver = new ScreenOnReceiver();

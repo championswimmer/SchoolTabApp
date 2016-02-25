@@ -6,6 +6,9 @@
 # Files for the Dalvik VM
 *.dex
 
+# key
+/releasekey.jks
+
 # Java class files
 *.class
 

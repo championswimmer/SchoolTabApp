@@ -1,10 +1,18 @@
 package in.championswimmer.schooltabapp;
 
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.ContentObserver;
+import android.media.AudioManager;
+import android.os.Handler;
 import android.os.IBinder;
+import android.provider.Settings;
 import android.util.Log;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class LongRunningService extends Service {
 
@@ -29,11 +37,11 @@ public class LongRunningService extends Service {
         } catch (Exception e) {
 
         }
-        registerReceiver(screenOnReceiver, intentFilter);
 
 
         return START_STICKY;
     }
+
 
     @Override
     public IBinder onBind(Intent intent) {

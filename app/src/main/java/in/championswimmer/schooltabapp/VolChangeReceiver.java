@@ -32,14 +32,14 @@ public class VolChangeReceiver extends BroadcastReceiver{
 
 
         if (hour > 7 && hour < 14 && newVolume != 0) {
-            Log.d(TAG, "onReceive: Time matches = closing cam + audio");
+            Log.d(TAG, "onReceive: Volume:  Time matches = closing cam + audio");
             audioManager.setStreamVolume(AudioManager.STREAM_ALARM, 0, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
             audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 0, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
             audioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION, 0, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
             audioManager.setStreamVolume(AudioManager.STREAM_RING, 0, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
             audioManager.setStreamVolume(AudioManager.STREAM_SYSTEM, 0, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
         } else {
-            Log.d(TAG, "onReceive: Time doesn't match = opening cam + audio");
+            Log.d(TAG, "onReceive: Volume: Time doesn't match = opening cam + audio");
         }
     }
 }

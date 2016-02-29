@@ -39,7 +39,7 @@ public class ScreenOnReceiver extends BroadcastReceiver{
 
 
             if (hour > 7 && hour < 14) {
-                Log.d(TAG, "onReceive: Time matches = closing cam + audio");
+                Log.d(TAG, "onReceive: Sreeen: Time matches = closing cam + audio");
                 mDPM.setCameraDisabled(adminComponent, true);
                 audioManager.setStreamVolume(AudioManager.STREAM_ALARM, 0, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
                 audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 0, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
@@ -47,7 +47,7 @@ public class ScreenOnReceiver extends BroadcastReceiver{
                 audioManager.setStreamVolume(AudioManager.STREAM_RING, 0, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
                 audioManager.setStreamVolume(AudioManager.STREAM_SYSTEM, 0, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
             } else {
-                Log.d(TAG, "onReceive: Time doesn't match = opening cam + audio");
+                Log.d(TAG, "onReceive: Screen:  Time doesn't match = opening cam + audio");
                 mDPM.setCameraDisabled(adminComponent, false);
             }
         }

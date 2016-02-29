@@ -38,6 +38,8 @@ public class LongRunningService extends Service {
 
         }
 
+        registerReceiver(screenOnReceiver, intentFilter);
+
 
         return START_STICKY;
     }

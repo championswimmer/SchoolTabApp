@@ -4,6 +4,16 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
+
+    signingConfigs {
+      release {
+        storeFile file("../releasekey.jks")
+        storePassword "schooltab"
+        keyAlias "schooltab"
+        keyPassword "schooltab"
+      }
+    }
+
     defaultConfig {
         applicationId "in.championswimmer.schooltabapp"
         minSdkVersion 19
